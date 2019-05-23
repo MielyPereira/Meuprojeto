@@ -1,8 +1,11 @@
- version: 2
- jobs:
-   build:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A first hello"
+version: 2.0
+jobs:
+  build:
+    environment:
+      CC_TEST_REPORTER_ID: YOUR_REPO_CC_TEST_REPORTER_ID
+    docker:
+      - image: circleci/php:7.1.9-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: echo " A first hello"
